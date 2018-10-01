@@ -1,6 +1,9 @@
 package org.techtown.a0930_bibly_simply;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,9 +15,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import java.io.ByteArrayOutputStream;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class TabFragment1_view1_btn2 extends Fragment {
 
@@ -24,6 +31,10 @@ public class TabFragment1_view1_btn2 extends Fragment {
     @BindView(R.id.dummy4) ImageView dummy4;
     @BindView(R.id.dummy5) ImageView dummy5;
     @BindView(R.id.dummy6) ImageView dummy6;
+
+    ImageView[] dummy = {dummy1, dummy2, dummy3, dummy4, dummy5, dummy6};
+    int[] dummy_image = {R.drawable.dummy_2_1, R.drawable.dummy_2_2, R.drawable.dummy_2_3,
+                            R.drawable.dummy_2_4, R.drawable.dummy_2_5, R.drawable.dummy_2_6};
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Nullable
@@ -43,15 +54,85 @@ public class TabFragment1_view1_btn2 extends Fragment {
 //        MyRecyclerViewAdapter adapter = new MyRecyclerViewAdapter(1);
 //        recyclerView.setAdapter(adapter);
 
-        dummy1.setImageResource(R.drawable.dummy_2_1);
-        dummy2.setImageResource(R.drawable.dummy_2_2);
-        dummy3.setImageResource(R.drawable.dummy_2_3);
-        dummy4.setImageResource(R.drawable.dummy_2_4);
-        dummy5.setImageResource(R.drawable.dummy_2_5);
-        dummy6.setImageResource(R.drawable.dummy_2_6);
+        //안되는 코드!
+//        for (int i = 0; i < dummy.length; i++)
+//            dummy[i].setImageResource(dummy_image[i]);
 
+        dummy1.setImageResource(R.drawable.dummy_3_1);
+        dummy2.setImageResource(R.drawable.dummy_3_2);
+        dummy3.setImageResource(R.drawable.dummy_3_3);
+        dummy4.setImageResource(R.drawable.dummy_3_4);
+        dummy5.setImageResource(R.drawable.dummy_3_5);
+        dummy6.setImageResource(R.drawable.dummy_3_6);
 
 
         return view;
+    }
+
+
+    @OnClick({R.id.dummy1, R.id.dummy2, R.id.dummy3, R.id.dummy4, R.id.dummy5, R.id.dummy6}) void click(View v) {
+        Intent myIntent;
+        Bitmap bitmap;
+        switch (v.getId()) {
+            case R.id.dummy1:
+                myIntent = new Intent(getActivity(), BookDetailActivity.class);
+//                bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dummy_1_1);
+//                myIntent.putExtra("book", bitmap);
+                myIntent.putExtra("book", R.drawable.dummy_1_1);
+                myIntent.putExtra("title", "dummy_1_1");
+                myIntent.putExtra("author", "person_1_1");
+                startActivity(myIntent);
+                break;
+
+            case R.id.dummy2:
+                myIntent = new Intent(getActivity(), BookDetailActivity.class);
+//                bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dummy_1_2);
+//                myIntent.putExtra("book", bitmap);
+                myIntent.putExtra("book", R.drawable.dummy_1_2);
+                myIntent.putExtra("title", "dummy_1_2");
+                myIntent.putExtra("author", "person_1_2");
+                startActivity(myIntent);
+                break;
+
+            case R.id.dummy3:
+                myIntent = new Intent(getActivity(), BookDetailActivity.class);
+//                bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dummy_1_3);
+//                myIntent.putExtra("book", bitmap);
+                myIntent.putExtra("book", R.drawable.dummy_1_3);
+                myIntent.putExtra("title", "dummy_1_3");
+                myIntent.putExtra("author", "person_1_3");
+                startActivity(myIntent);
+                break;
+
+            case R.id.dummy4:
+                myIntent = new Intent(getActivity(), BookDetailActivity.class);
+//                bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dummy_1_4);
+//                myIntent.putExtra("book", bitmap);
+                myIntent.putExtra("book", R.drawable.dummy_1_4);
+                myIntent.putExtra("title", "dummy_1_4");
+                myIntent.putExtra("author", "person_1_4");
+                startActivity(myIntent);
+                break;
+
+            case R.id.dummy5:
+                myIntent = new Intent(getActivity(), BookDetailActivity.class);
+//                bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dummy_1_5);
+//                myIntent.putExtra("book", bitmap);
+                myIntent.putExtra("book", R.drawable.dummy_1_5);
+                myIntent.putExtra("title", "dummy_1_5");
+                myIntent.putExtra("author", "person_1_5");
+                startActivity(myIntent);
+                break;
+
+            case R.id.dummy6:
+                myIntent = new Intent(getActivity(), BookDetailActivity.class);
+//                bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dummy_1_6);
+//                myIntent.putExtra("book", bitmap);
+                myIntent.putExtra("book", R.drawable.dummy_1_6);
+                myIntent.putExtra("title", "dummy_1_6");
+                myIntent.putExtra("author", "person_1_6");
+                startActivity(myIntent);
+                break;
+        }
     }
 }

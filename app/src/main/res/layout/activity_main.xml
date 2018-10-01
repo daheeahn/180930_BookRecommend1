@@ -7,11 +7,13 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
+    <include layout="@layout/toolbar_main" />
+
     <android.support.design.widget.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="43dp"
-        android:background="#fae3e3">
+        android:background="#cef7ea">
 
     </android.support.design.widget.TabLayout>
 

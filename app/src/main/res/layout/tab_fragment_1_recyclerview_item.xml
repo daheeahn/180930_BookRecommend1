@@ -5,7 +5,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/dummy"
+        android:id="@+id/dummy_book"
         android:layout_width="95dp"
         android:layout_height="120dp"
         android:src="@drawable/dummy_1_1"/>

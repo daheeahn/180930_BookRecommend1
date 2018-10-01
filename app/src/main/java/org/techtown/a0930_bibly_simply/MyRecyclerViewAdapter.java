@@ -74,7 +74,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
 
         public RowCell(View view) {
             super(view);
-            book = (ImageView) view.findViewById(R.id.dummy);
+            book = (ImageView) view.findViewById(R.id.dummy_book);
         }
     }
 }
