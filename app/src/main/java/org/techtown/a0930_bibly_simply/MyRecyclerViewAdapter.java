@@ -14,8 +14,20 @@ import butterknife.ButterKnife;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private ArrayList<BookInfo> bookInfos = new ArrayList<>();
+
+    int[] dummy_image = {R.drawable.dummy_2_1, R.drawable.dummy_2_2, R.drawable.dummy_2_3,
+            R.drawable.dummy_2_4, R.drawable.dummy_2_5, R.drawable.dummy_2_6};
+
     public MyRecyclerViewAdapter(int index) {
         if (index == 0) {
+
+            for(int i=0;i<10;i++){
+                String title = "title"+i;
+                String author = "author"+i;
+                int bookImage = dummy_image[i];
+
+            }
+
             bookInfos.add(new BookInfo(R.drawable.dummy_1_1)); bookInfos.add(new BookInfo(R.drawable.dummy_1_2));
             bookInfos.add(new BookInfo(R.drawable.dummy_1_3)); bookInfos.add(new BookInfo(R.drawable.dummy_1_4));
             bookInfos.add(new BookInfo(R.drawable.dummy_1_5)); bookInfos.add(new BookInfo(R.drawable.dummy_1_6));

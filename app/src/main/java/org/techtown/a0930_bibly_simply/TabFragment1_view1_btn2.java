@@ -8,6 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -31,6 +32,7 @@ public class TabFragment1_view1_btn2 extends Fragment {
     @BindView(R.id.dummy4) ImageView dummy4;
     @BindView(R.id.dummy5) ImageView dummy5;
     @BindView(R.id.dummy6) ImageView dummy6;
+
 
     ImageView[] dummy = {dummy1, dummy2, dummy3, dummy4, dummy5, dummy6};
     int[] dummy_image = {R.drawable.dummy_2_1, R.drawable.dummy_2_2, R.drawable.dummy_2_3,
@@ -69,8 +71,25 @@ public class TabFragment1_view1_btn2 extends Fragment {
         return view;
     }
 
+    @OnClick(R.id.dummy1)
+    void dummy1Clicked(){
+        startBookActivity(R.drawable.dummy_1_1);
+    }
 
-    @OnClick({R.id.dummy1, R.id.dummy2, R.id.dummy3, R.id.dummy4, R.id.dummy5, R.id.dummy6}) void click(View v) {
+    @OnClick(R.id.dummy2)
+    void dummy2Clicked(){
+        startBookActivity(R.drawable.dummy_1_2);
+    }
+
+    void startBookActivity(int resourceId){
+       Intent myIntent = new Intent(getActivity(), BookDetailActivity.class);
+
+
+    }
+
+
+    @OnClick({R.id.dummy1, R.id.dummy2, R.id.dummy3, R.id.dummy4, R.id.dummy5, R.id.dummy6})
+    void click(View v) {
         Intent myIntent;
         //Bitmap bitmap;
         switch (v.getId()) {
@@ -88,7 +107,9 @@ public class TabFragment1_view1_btn2 extends Fragment {
                 myIntent = new Intent(getActivity(), BookDetailActivity.class);
 //                bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.dummy_1_2);
 //                myIntent.putExtra("book", bitmap);
-                myIntent.putExtra("book", R.drawable.dummy_1_2);
+                BookInfo bookInfo = new BookInfo();
+
+                myIntent.putExtra("bookInfo", bookInfo);
                 myIntent.putExtra("title", "dummy_1_2");
                 myIntent.putExtra("author", "person_1_2");
                 startActivity(myIntent);

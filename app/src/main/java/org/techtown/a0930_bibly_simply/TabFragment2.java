@@ -44,7 +44,13 @@ public class TabFragment2 extends Fragment {
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
 
-        MyRecyclerViewAdapter_TabFragment2 adapter = new MyRecyclerViewAdapter_TabFragment2();
+        MyRecyclerViewAdapter_TabFragment2_Adapter adapter =
+                new MyRecyclerViewAdapter_TabFragment2_Adapter(getActivity(), new MyRecyclerViewAdapter_TabFragment2_Adapter.onBookInfoClickedListener() {
+                    @Override
+                    public void startActivity(String title) {
+                        getActivity().startActivity(new Intent(...));
+                    }
+                });
         recyclerView.setAdapter(adapter);
 
         return view;

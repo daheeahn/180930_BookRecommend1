@@ -33,6 +33,7 @@ public class BookDetailActivity extends AppCompatActivity {
 
 //        Bitmap bitmap = (Bitmap) intent.getExtras().get("book");
 //        book.setImageBitmap(bitmap);
+       BookInfo info = (BookInfo) intent.getSerializableExtra("bookInfo");
         book.setImageResource((Integer) intent.getExtras().get("book"));
         title.setText(intent.getStringExtra("title"));
         author.setText(intent.getStringExtra("author"));

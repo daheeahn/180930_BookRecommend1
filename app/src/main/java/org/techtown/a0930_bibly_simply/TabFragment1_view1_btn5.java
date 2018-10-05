@@ -16,12 +16,12 @@ import butterknife.ButterKnife;
 
 public class TabFragment1_view1_btn5 extends Fragment {
 
-    @BindView(R.id.dummy1) ImageView dummy1;
-    @BindView(R.id.dummy2) ImageView dummy2;
-    @BindView(R.id.dummy3) ImageView dummy3;
-    @BindView(R.id.dummy4) ImageView dummy4;
-    @BindView(R.id.dummy5) ImageView dummy5;
-    @BindView(R.id.dummy6) ImageView dummy6;
+//    @BindView(R.id.dummy1) ImageView dummy1;
+//    @BindView(R.id.dummy2) ImageView dummy2;
+//    @BindView(R.id.dummy3) ImageView dummy3;
+//    @BindView(R.id.dummy4) ImageView dummy4;
+//    @BindView(R.id.dummy5) ImageView dummy5;
+//    @BindView(R.id.dummy6) ImageView dummy6;
 
     @Nullable
     @Override
